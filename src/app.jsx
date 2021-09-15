@@ -9,7 +9,6 @@ import JSONPretty from 'react-json-pretty';
 import styled from 'styled-components';
 import Colors from './constants/colors';
 import Spacing from './constants/spacing';
-import parseNodes from './scripts/parsingRichTextTools/parseNodes';
 import parseHtml from './scripts/parsingRichTextTools/parseHtml';
 
 const App = () => {
