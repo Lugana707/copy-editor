@@ -3,7 +3,7 @@
   "sideEffects": false,
   "version": "0.0.1",
   "description": "Toy app to transform text into a predetermined JSON format",
-  "main": "./index.js",
+  "main": "./src/index.js",
   "scripts": {
     "ci": "npm install && npm test",
     "test": "npm run depcheck && npm run lint && npm run jest",
