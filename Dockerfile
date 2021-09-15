@@ -12,7 +12,7 @@ COPY . .
 RUN \
   --mount=id=node_modules,type=cache,target=/src/node_modules \
   --mount=type=tmpfs,target=/src/build \
-  npm ci
+  npm ci && npm run test
 
 FROM test AS build
 
