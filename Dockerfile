@@ -16,6 +16,7 @@ ENV NODE_ENV=development
 COPY . .
 RUN \
   --mount=type=cache,target=/src/node_modules,from=dependencies,source=/src/node_modules \
+  --mount=type=tmpfs,target=/src/dist \
   npm run test
 
 FROM test AS build
@@ -30,6 +31,6 @@ RUN \
 FROM scratch AS release
 
 COPY --from=test /src/coverage /test/coverage
-COPY --from=build /src/build /build
+COPY --from=build /src/dist /build
 
 FROM release AS deploy

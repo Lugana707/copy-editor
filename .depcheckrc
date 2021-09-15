@@ -22,3 +22,5 @@ ignores:
   - flow-bin
   - terser-webpack-plugin
   - webpack-cli
+  - babel-jest
+  - jest-junit
