@@ -1,63 +1,63 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const merge = require("webpack-merge");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
   entry: {
-    app: "./index.js"
+    app: './src/index.jsx',
   },
   output: {
-    publicPath: "/"
+    publicPath: '/',
   },
   module: {
     rules: [
       {
         test: [/\.js$/, /\.jsx$/],
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
-          presets: ["@babel/react", "@babel/flow"]
-        }
+          presets: ['@babel/react', '@babel/flow'],
+        },
       },
       {
         test: /\.svg$/,
         use: [
           {
-            loader: "babel-loader"
+            loader: 'babel-loader',
           },
           {
-            loader: "react-svg-loader",
+            loader: 'react-svg-loader',
             options: {
-              jsx: true // true outputs JSX tags
-            }
-          }
-        ]
+              jsx: true, // true outputs JSX tags
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|webp)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              outputPath: "assets"
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'assets',
+            },
+          },
+        ],
+      },
+    ],
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
-    contentBase: ".",
+    contentBase: '.',
     historyApiFallback: true,
-    port: "8000",
-    host: "0.0.0.0",
-    disableHostCheck: true
+    port: '8000',
+    host: '0.0.0.0',
+    disableHostCheck: true,
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./index.html",
-      filename: "./index.html"
-    })
-  ]
+      template: './src/index.html',
+      filename: './src/index.html',
+    }),
+  ],
 };

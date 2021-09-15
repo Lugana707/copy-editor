@@ -1,6 +1,6 @@
 // @flow
 const SPACING = {
-    small: 24,
+  small: 24,
 };
 
 export default SPACING;
