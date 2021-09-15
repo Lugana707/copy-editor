@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:experimental
 
-FROM node:12 AS base
+FROM node:16.9.1-alpine3.14 AS base
 
 WORKDIR /src
 
