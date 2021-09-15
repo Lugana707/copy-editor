@@ -2,6 +2,7 @@
 
 FROM node:16.9.1-alpine3.14 AS base
 
+RUN npm install -g npm@7.23.0
 WORKDIR /src
 
 FROM base AS dependencies
