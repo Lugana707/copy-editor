@@ -8,7 +8,7 @@
     "ci": "npm install && npm test",
     "test": "npm run depcheck && npm run lint && npm run jest",
     "depcheck": "depcheck .",
-    "lint": "eslint .",
+    "lint": "eslint --ext .jsx .",
     "jest": "jest --coverage --reporters=default --reporters=jest-junit",
     "watch": "webpack --watch --config webpack/dev.config.js",
     "start": "webpack-dev-server --open --config webpack/dev.config.js",
