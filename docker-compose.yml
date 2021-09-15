@@ -1,0 +1,13 @@
+version: "3.5"
+services:
+  web:
+    build:
+      context: .
+      target: base
+    command: sh -c "npm ci && npm start"
+    ports:
+      - 80:8000
+    volumes:
+      - .:/src
+    tmpfs:
+      - /src/node_modules
