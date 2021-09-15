@@ -23,3 +23,14 @@ jobs:
           cache-from: type=gha,mode=max
           cache-to: type=gha,mode=max
           target: release
+      - name: Get Test Results
+        if: ${{ success() || failure() }}
+        run: |
+          docker create --name dummy ${{ github.repository }}:latest sh
+          docker cp dummy:/test/ test/
+          docker rm dummy
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.19
+        if: ${{ always() && github.actor != 'dependabot[bot]' }}
+        with:
+          files: test/results/*.xml

@@ -30,6 +30,7 @@ RUN \
 
 FROM scratch AS release
 
+COPY --from=test /src/junit.xml /test/results/junit.xml
 COPY --from=test /src/coverage /test/coverage
 COPY --from=build /src/dist /build
 

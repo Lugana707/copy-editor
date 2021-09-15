@@ -5,4 +5,5 @@ node_modules/
 *.swn
 
 coverage/
+junit.xml
 dist/

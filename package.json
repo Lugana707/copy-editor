@@ -65,8 +65,5 @@
       "json",
       "html"
     ]
-  },
-  "jest-junit": {
-    "output": "output/coverage/junit/junit.xml"
   }
 }
