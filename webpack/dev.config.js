@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/index.jsx',
+    app: './index.jsx',
   },
   output: {
     publicPath: '/',
@@ -56,8 +56,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/index.html',
-      filename: './src/index.html',
+      template: './index.html',
+      filename: './index.html',
     }),
   ],
 };
