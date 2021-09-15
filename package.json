@@ -6,9 +6,10 @@
   "main": "./index.js",
   "scripts": {
     "ci": "npm install && npm test",
-    "test": "npm run test:lint",
-    "test:lint": "eslint .",
-    "test:jest": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run depcheck && npm run lint",
+    "depcheck": "depcheck .",
+    "lint": "eslint .",
+    "jest": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --config webpack/dev.config.js",
     "start": "webpack-dev-server --open --config webpack/dev.config.js",
     "build": "webpack --config webpack/dev.config.js"
@@ -28,6 +29,7 @@
     "@types/react": "^16.9.35",
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "depcheck": "^1.4.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.24.2",
@@ -44,7 +46,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "package.json": "^2.0.1",
     "react": "^16.13.1",
     "react-contenteditable": "^3.3.5",
     "react-dom": "^16.13.1",

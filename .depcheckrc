@@ -1,0 +1,24 @@
+specials:
+  - babel
+  - eslint
+  - jest
+  - webpack
+
+ignores:
+  - depcheck
+  - webpack-dev-server
+  - jest
+  - husky
+  - "@babel/runtime"
+  - "@babel/core"
+  - "@babel/plugin-syntax-dynamic-import"
+  - "@babel/plugin-transform-runtime"
+  - "@babel/preset-env"
+  - "@babel/preset-flow"
+  - "@babel/preset-react"
+  - "@types/react"
+  - babel-loader
+  - babel-plugin-styled-components
+  - flow-bin
+  - terser-webpack-plugin
+  - webpack-cli
