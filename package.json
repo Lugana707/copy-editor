@@ -6,10 +6,10 @@
   "main": "./index.js",
   "scripts": {
     "ci": "npm install && npm test",
-    "test": "npm run depcheck && npm run lint",
+    "test": "npm run depcheck && npm run lint && npm run jest",
     "depcheck": "depcheck .",
     "lint": "eslint .",
-    "jest": "echo \"Error: no test specified\" && exit 1",
+    "jest": "jest --coverage --reporters=default --reporters=jest-junit",
     "watch": "webpack --watch --config webpack/dev.config.js",
     "start": "webpack-dev-server --open --config webpack/dev.config.js",
     "build": "webpack --config webpack/dev.config.js",
@@ -24,10 +24,12 @@
     "@babel/core": "^7.10.2",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-env": "^7.15.6",
     "@babel/preset-flow": "^7.10.1",
-    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-react": "^7.14.5",
+    "@testing-library/react": "^12.1.0",
     "@types/react": "^16.9.35",
+    "babel-jest": "^27.2.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "depcheck": "^1.4.2",
@@ -40,6 +42,9 @@
     "flow-bin": "^0.102.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^7.0.2",
+    "jest": "^27.2.0",
+    "jest-junit": "^12.2.0",
+    "react-test-renderer": "^17.0.2",
     "terser-webpack-plugin": "^1.4.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
@@ -54,5 +59,15 @@
     "react-html-parser": "^2.0.2",
     "react-json-pretty": "^2.2.0",
     "styled-components": "^4.4.1"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "json",
+      "html"
+    ]
+  },
+  "jest-junit": {
+    "output": "output/coverage/junit/junit.xml"
   }
 }

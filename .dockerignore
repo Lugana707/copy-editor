@@ -5,5 +5,7 @@
 
 node_modules/
 
+coverage/
+
 README.md
 docker-compose.yml
