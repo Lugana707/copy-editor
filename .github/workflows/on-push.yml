@@ -26,7 +26,7 @@ jobs:
       - name: Get Test Results
         if: ${{ success() || failure() }}
         run: |
-          docker create --name dummy ${{ github.repository }}:latest sh
+          docker create --name dummy lugana707/copy-editor:latest sh
           docker cp dummy:/test/ test/
           docker rm dummy
       - name: Publish Unit Test Results
